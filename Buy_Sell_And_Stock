@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class buysellandstock {
+
+    public static int buysell (int Stock[]){
+        int BuyPrice = Integer.MAX_VALUE;
+        int maxnumb=0;
+
+        for(int i = 0 ; i<Stock.length ; i++){
+
+            if (BuyPrice<Stock[i]){
+                int profit= Stock[i]-BuyPrice;
+                maxnumb= Math.max(maxnumb,profit);
+            }
+            else{
+                BuyPrice=Stock[i];
+            }
+        }
+        return maxnumb;
+
+    }
+
+    
+    public static void main (String args[]){
+        int Stock[] = {7,1,5,3,6,4,10};
+
+        System.out.println(buysell(Stock));
+    }
+}
+
